@@ -5,7 +5,7 @@
  * gcc -o 0_basic 0_basic.c
  *
  * to compile with all warnings enabled, run
- * gcc -Wall -o 0_basic 0_basic.c
+ * gcc -Wall -o 0_basic 0_basic.c minha_bib.c
  *
  */
 
@@ -13,7 +13,7 @@
 #define LIM 20
 
 #include <stdio.h>
-
+#include "minha_bib.h"  // <-- isso é um header customizado
 
 int sum(int a, int b){
 	int c = a + b;
@@ -35,7 +35,10 @@ int sum(int a, int b){
 	return 0;
 }
 
-
+void faz_soma(int a, int b){
+	a + b;
+	// essa função não retorna nada
+}
 
 // Função principal
 // O fluxo do código começa aqui
@@ -53,6 +56,24 @@ int main(){
 	   a - b    subtração
 	   a % b   resto de a por b*/
 	// Comentarios ^^^^^^^^^^
+	
+
+	float f = 22.0/7.0;
+	printf("exemplo de float: %f\n", f);
+
+	char ch = '?'; // a var ch não mudará de valor
+	printf("exemplo de char: %c\n", ch);
+
+	const char co = 'Q';
+	static char cj = 'R';
+
+
+
+	/*bool b = 0;
+	if ( b ){
+	    printf("Esse print nao sera feito");
+	}*/
+
 
 	int s;    // <----- ponto e virgula
 	int entrada;
@@ -86,6 +107,8 @@ int main(){
 	    default:
 		    printf("caso base\n");
 	
-	}	
+	}
+
+        imprimeOi();	
 	return 0;
 }
